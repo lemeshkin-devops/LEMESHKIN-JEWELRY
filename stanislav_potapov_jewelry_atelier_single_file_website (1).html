@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stanislav Lemeshkin — Fine Jewelry & Bespoke Atelier</title>
+  <meta name="description" content="Handcrafted fine jewelry with rare stones by Stanislav Lemeshkin. Engagement rings, necklaces, earrings, and custom commissions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --ink:#0f172a; --amber:#f59e0b; }
+    body{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial}
+    .serif{font-family:"Playfair Display", Georgia, serif}
+    .shadow-soft{box-shadow:0 10px 30px rgba(0,0,0,.12)}
+    .glass{backdrop-filter: blur(8px); background: rgba(15,23,42,.55)}
+    .ringish{box-shadow: inset 0 0 0 10px rgba(255,255,255,.25), inset 0 0 0 2px rgba(0,0,0,.08);}
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <!-- Topbar -->
+  <header class="fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="mt-3 rounded-2xl glass text-white shadow-soft">
+        <div class="flex items-center justify-between px-6 py-4">
+          <a href="#" class="flex items-center gap-3">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z" stroke="#fde68a" stroke-width="1.2"/><circle cx="12" cy="12" r="2.5" fill="#fbbf24"/></svg>
+            <span class="serif text-xl tracking-wide">Lemeshkin Atelier</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-8 text-sm">
+            <a href="#collections" class="hover:text-amber-300">Collections</a>
+            <a href="#rare" class="hover:text-amber-300">Rare Stones</a>
+            <a href="#about" class="hover:text-amber-300">About</a>
+            <a href="#contact" class="hover:text-amber-300">Contact</a>
+          </nav>
+          <button id="menuBtn" class="md:hidden p-2" aria-label="Open menu">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 px-6 pb-6">
+          <a href="#collections" class="block py-2">Collections</a>
+          <a href="#rare" class="block py-2">Rare Stones</a>
+          <a href="#about" class="block py-2">About</a>
+          <a href="#contact" class="block py-2">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative pt-36">
+    <div class="absolute inset-0 -z-10">
+      <img src="https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?q=80&w=2400&auto=format&fit=crop" alt="Gold and gemstones on velvet" class="h-full w-full object-cover"/>
+      <div class="absolute inset-0 bg-slate-900/65"></div>
+    </div>
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="grid items-center gap-10 md:grid-cols-2 text-white">
+        <div>
+          <h1 class="serif text-4xl md:text-6xl leading-tight">Handcrafted Fine Jewelry
+            <span class="block text-amber-300">by Stanislav Lemeshkin</span></h1>
+          <p class="mt-5 max-w-xl text-white/85">Rare stones, ethical sourcing, and heirloom craftsmanship. Bespoke engagement rings, necklaces, earrings, and statement pieces.</p>
+          <div class="mt-8 flex gap-4">
+            <a href="#collections" class="rounded-xl bg-amber-400/90 px-5 py-3 font-medium text-slate-900 hover:bg-amber-300">Explore Collections</a>
+            <a href="#contact" class="rounded-xl border border-white/30 px-5 py-3 font-medium text-white hover:bg-white/10">Request a Bespoke Piece</a>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-3 text-xs text-white/80">
+            <span class="rounded-full border border-white/20 px-3 py-1">Paraíba Tourmaline</span>
+            <span class="rounded-full border border-white/20 px-3 py-1">Padparadscha Sapphire</span>
+            <span class="rounded-full border border-white/20 px-3 py-1">Alexandrite</span>
+            <span class="rounded-full border border-white/20 px-3 py-1">Colombian Emerald</span>
+            <span class="rounded-full border border-white/20 px-3 py-1">Burmese Ruby</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collections -->
+  <section id="collections" class="mx-auto max-w-7xl px-4 py-20">
+    <div class="mb-8 flex items-end justify-between">
+      <div>
+        <h2 class="serif text-3xl md:text-4xl">Signature Collections</h2>
+        <p class="text-slate-600">Six handpicked exemplars featuring rare stones.</p>
+      </div>
+      <div class="flex gap-2">
+        <button id="filterRings" class="rounded-lg border border-slate-300 px-3 py-2 text-sm">Rings</button>
+        <button id="filterAll" class="rounded-lg border border-slate-300 px-3 py-2 text-sm">All</button>
+      </div>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="productGrid"></div>
+  </section>
+
+  <!-- Rare stones band -->
+  <section id="rare" class="bg-white/60 py-16">
+    <div class="mx-auto max-w-7xl px-4 grid gap-6 md:grid-cols-3">
+      <div>
+        <h3 class="serif text-3xl">Rare & Exceptional Stones</h3>
+        <p class="mt-3 text-slate-600">Ethically sourced gemstones with exceptional color and clarity.</p>
+      </div>
+      <figure class="overflow-hidden rounded-2xl shadow-soft">
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQRwxGWpaFHtf2tKYiwKl8RjUm4RlF41mFi4gZutdeB17p-WEhitj66k-A0zwhwJ9VZfeweKLi2p4vAzfkiu4_ghNPswsURovOiyZZG_7vkhBY3vQcINvH4vGIIRyL88Dfhgav9oQ&usqp=CAc" alt="Padparadscha sapphire ring" class="h-64 w-full object-cover"/>
+        <figcaption class="px-4 py-3 text-sm text-slate-700">Padparadscha Sapphire — rare salmon pink‑orange</figcaption>
+      </figure>
+      <figure class="overflow-hidden rounded-2xl shadow-soft">
+        <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ9DYMSV1b4h_ZDE4oDdpII6ul9hY1PMfNa2_cola_YAWsqz3ylM9NN_tNG9nZShv3zBhVmKS7R91P2eEYE-6zLetRmKdyQsvAflQd6U-SpJk69CKuwqp17v85left_m2A6_Jb4QQ&usqp=CAc" alt="Paraíba tourmaline" class="h-64 w-full object-cover"/>
+        <figcaption class="px-4 py-3 text-sm text-slate-700">Paraíba Tourmaline — neon copper hue</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- About owner -->
+  <section id="about" class="mx-auto max-w-7xl px-4 py-20">
+    <div class="grid gap-10 md:grid-cols-2">
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1556227701-62b8f24c2a0e?q=80&w=1600&auto=format&fit=crop" alt="Portrait of Stanislav Lemeshkin" class="rounded-2xl shadow-soft"/>
+        <span class="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-2 text-sm font-medium shadow">Stanislav Lemeshkin — Master of Jewelry
+        </span>
+      </div>
+      <div class="self-center">
+        <h3 class="serif text-3xl">About the Owner</h3>
+        <p class="mt-4 text-slate-700 leading-relaxed">Stanislav blends traditional goldsmithing with a modern design sensibility. From sketch to stone selection to the final polish, each piece is crafted by hand to become a future heirloom.</p>
+        <ul class="mt-6 grid grid-cols-1 gap-2 text-slate-700">
+          <li>• Bespoke engagement & ceremonial jewelry</li>
+          <li>• Ethical sourcing & traceable stones</li>
+          <li>• Hand‑engraving, pavé & micro‑setting</li>
+        </ul>
+        <a href="#contact" class="mt-8 inline-block rounded-xl bg-slate-900 px-5 py-3 text-white hover:bg-slate-800">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-slate-900 py-20 text-white">
+    <div class="mx-auto max-w-7xl px-4">
+      <h3 class="serif text-3xl">What Clients Say</h3>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <blockquote class="rounded-2xl bg-white/5 p-6">“The craftsmanship is extraordinary. My ring catches the light like nothing else.”<br><span class="mt-3 block text-sm text-white/70">— A. Lebedev</span></blockquote>
+        <blockquote class="rounded-2xl bg-white/5 p-6">“Stanislav guided us through selecting an ethical sapphire with perfect color.”<br><span class="mt-3 block text-sm text-white/70">— M. Cohen</span></blockquote>
+        <blockquote class="rounded-2xl bg-white/5 p-6">“A true bespoke experience from sketch to final polish.”<br><span class="mt-3 block text-sm text-white/70">— L. Nguyen</span></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="mx-auto max-w-7xl px-4 py-20">
+    <div class="mb-10 text-center">
+      <h3 class="serif text-3xl">Start Your Bespoke Piece</h3>
+      <p class="text-slate-600">Tell us about your dream design. We’ll reply within 1–2 business days.</p>
+    </div>
+    <div class="grid gap-8 md:grid-cols-2">
+      <form class="rounded-2xl bg-white p-6 shadow-soft">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <label class="block">Full name
+            <input type="text" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" placeholder="Your name" required>
+          </label>
+          <label class="block">Email
+            <input type="email" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" placeholder="you@example.com" required>
+          </label>
+        </div>
+        <label class="mt-4 block">Stone preference
+          <select class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2">
+            <option>Paraíba tourmaline</option>
+            <option>Padparadscha sapphire</option>
+            <option>Emerald</option>
+            <option>Ruby</option>
+            <option>Alexandrite</option>
+            <option>Diamond</option>
+            <option>Other / Not sure</option>
+          </select>
+        </label>
+        <label class="mt-4 block">Message
+          <textarea rows="5" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" placeholder="Share your ideas, ring size, budget range, timeline…"></textarea>
+        </label>
+        <button type="button" id="sendBtn" class="mt-5 w-full rounded-xl bg-amber-400 px-5 py-3 font-semibold text-slate-900 hover:bg-amber-300">Send request</button>
+        <p id="formNote" class="mt-3 hidden text-sm text-emerald-700">Thanks! Your message has been queued (demo).</p>
+      </form>
+      <div class="space-y-6">
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSRTZxPcUox0Hlt76iilWcMF-1KEJAmyIPxMGUdWn0l02-UfXFcB4WCZTodT-9AmzsfkZhwHrBpySnh4G3Lz18_wc1N2iQQpzrTCm7oI6GyaTiy0_HLtvdYkr25nZPvuYEUSkhkIFI&usqp=CAc" alt="Emerald ring with diamond accents" class="rounded-2xl shadow-soft"/>
+        <div class="rounded-2xl bg-white p-6 shadow-soft">
+          <h4 class="serif text-xl">Studio</h4>
+          <p class="mt-2 text-slate-700">Lemeshkin Atelier — by appointment only<br>Mon–Sat, 10:00–18:00</p>
+          <p class="mt-4 text-slate-700">Email: <a class="text-amber-700 underline" href="mailto:contact@lemeshkin-atelier.com">contact@lemeshkin-atelier.com</a><br>Instagram: <a class="text-amber-700 underline" href="#">@lemeshkin.atelier</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 py-10">
+    <div class="mx-auto max-w-7xl px-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <p class="text-slate-600">© <span id="year"></span> Lemeshkin Atelier. All rights reserved.</p>
+      <nav class="flex gap-6 text-sm text-slate-600">
+        <a href="#collections" class="hover:text-slate-900">Shop</a>
+        <a href="#rare" class="hover:text-slate-900">Rare Stones</a>
+        <a href="#about" class="hover:text-slate-900">About</a>
+        <a href="#contact" class="hover:text-slate-900">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menuBtn')?.addEventListener('click', ()=>{
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    // Demo form handler
+    document.getElementById('sendBtn')?.addEventListener('click', ()=>{
+      document.getElementById('formNote').classList.remove('hidden');
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Product data
+    const products = [
+      {id:'paraiba-ring', name:'Paraíba Halo Ring', price:'$9,800', category:'Rings', image:'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQOAPpYbdVkTUlqsBuxO2WMXs071gFeSdVQtAhb-2jJTWJDyhCc2zDES9on2Coq9vp3Q9LOC5RZBJ5dZe6AjObB8O3ygQ-PzifAAlE9THYdKAjlhbMb8rUulD6OpViPo8jMA1anWfBhvg&usqp=CAc', blurb:'Neon‑blue tourmaline with diamond halo.'},
+      {id:'emerald-pendant', name:'Colombian Emerald Pendant', price:'$7,450', category:'Necklaces', image:'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSA3XXA6iy46dfSEpLJ538kc2i8xWdvjAX6qVRExtXlFxz_FOUhTY0wsGN6_H9govny0YFoQX88NSk4hQXNBMqMT892ur0bsjKN7OObGHdjIz5EMBj7En41hASQnl8eMUKWJycfOZs&usqp=CAc', blurb:'Rich green emerald in 18k yellow gold.'},
+      {id:'padparadscha', name:'Padparadscha Solitaire', price:'$12,900', category:'Rings', image:'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT8KvgxZV6m73EHi1Jmj880wyzFTGA8hrl08DcqF5E9zeBB_mnaBA35VGK_R5CKVUM5zZKAYCfIUMtiLhSU1G8NvgiPyFND2ElpSOR4qk4AIPiReRaPHS0g', blurb:'Rare salmon pink‑orange sapphire.'},
+      {id:'diamond-drops', name:'Diamond Pavé Drops', price:'$3,200', category:'Earrings', image:'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTweE4WQ24WFxbmxX6HBcxuSEJDHuiCdbJNJuR6mjXQaA0WjbM4c6mffeH4vaxXNUJa0ScurfUc3KKu5AWRz-8cID-naREG4ETYvTqGf0yyQzLUWuDX2ZSRFcxcm4kA1d8WAUmjJTQ&usqp=CAc', blurb:'Elegant drops with micro‑pavé finish.'},
+      {id:'alexandrite-deco', name:'Alexandrite Art Deco Ring', price:'$14,300', category:'Rings', image:'data:image/webp;base64,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', blurb:'Color‑change stone in geometric setting.'},
+      {id:'spinel-line', name:'Spinel Line Bracelet', price:'$6,150', category:'Bracelets', image:'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=1600&auto=format&fit=crop', blurb:'Deep red spinel in a classic line.'},
+    ];
+
+    // Render products
+    const grid = document.getElementById('productGrid');
+    function render(list){
+      grid.innerHTML = '';
+      list.forEach(p=>{
+        const card = document.createElement('article');
+        card.className = 'group overflow-hidden rounded-2xl bg-white shadow-soft transition hover:-translate-y-0.5';
+        card.innerHTML = `
+          <div class="relative">
+            <img src="${p.image}" alt="${p.name}" class="h-64 w-full object-cover transition group-hover:scale-[1.02]"/>
+            <span class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-slate-900 shadow">${p.category}</span>
+            <button data-id="${p.id}" class="absolute right-3 top-3 rounded-full bg-white/90 px-3 py-1.5 text-sm font-medium text-slate-900 shadow">Add to cart</button>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center justify-between">
+              <h4 class="serif text-xl">${p.name}</h4>
+              <span class="font-semibold">${p.price}</span>
+            </div>
+            <p class="mt-1 text-sm text-slate-600">${p.blurb}</p>
+          </div>
+        `;
+        grid.appendChild(card);
+      })
+    }
+    render(products);
+
+    // Filters
+    document.getElementById('filterRings').addEventListener('click', ()=>{
+      render(products.filter(p=>p.category==='Rings'));
+    });
+    document.getElementById('filterAll').addEventListener('click', ()=>render(products));
+
+    // Fake cart feedback
+    document.addEventListener('click', (e)=>{
+      const btn = e.target.closest('button[data-id]');
+      if(!btn) return;
+      btn.textContent = 'Added';
+      btn.classList.add('bg-emerald-100');
+      setTimeout(()=>{ btn.textContent = 'Add to cart'; btn.classList.remove('bg-emerald-100'); }, 1500);
+    });
+  </script>
+</body>
+</html>
